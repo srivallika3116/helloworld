@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Event Registration</title></head>
+    <body>
+        <form id="registrational Form" on submit="return validation Form()">
+            <label for = "name">Full Name </label>
+            <input type = "text" id="name"required>
+            <label for ="email">Email</label>
+            <input type ="email" id="email"required>
+            <label for ="phone">Phone Number</label>
+            <input type="tel" id="phone" required pattern="[0-9]{10}">
+            <label for="event">Select Event</label>
+            <select id="event" required>
+                <option value="">__select__</option>
+                <option value="worksop">Workshop</option>
+                <option value="seminar">Seminar</option>
+                <option value="conference">conference</option>
+            </select>
+            <script>
+                function validateForm(){
+                    const phone = document.getById("phone").value;
+                    if(!/^\d{10}$/.test(phone)){
+                        alert('Invalid Phone number');
+                        return false;
+                    }
+                    alert('Registration Successful!');
+                    return true;
+                }
+            </script>
+            </body>
+            </html>
